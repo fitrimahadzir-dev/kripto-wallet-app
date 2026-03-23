@@ -1,0 +1,5 @@
+{
+  "name": "KerisWallet (App)",
+  "description": "A modern crypto wallet mobile UI for KerisWallet with balance, send functionality, and transaction history.",
+  "requestFramePermissions": []
+}

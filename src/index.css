@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --color-jade: #01be7d;
+  --color-jade-dark: #01a36b;
+  --color-ebony: #10162d;
+  --color-ebony-light: #1c2a4a;
+  --color-alabaster: #f8f8f8;
+  --color-riptide: #95e5ca;
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 1rem);
+  }
+}
