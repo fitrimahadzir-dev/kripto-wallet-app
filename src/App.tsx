@@ -50,7 +50,7 @@ function LoadingScreen() {
         transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse" }}
         className="relative mb-8"
       >
-        <div className="w-32 h-32 rounded-full bg-white shadow-2xl shadow-jade/20 flex items-center justify-center overflow-hidden border-4 border-jade/10">
+        <div className="w-32 h-32 rounded-full bg-alabaster shadow-2xl shadow-jade/20 flex items-center justify-center overflow-hidden border-4 border-jade/10">
           <img 
             src="./images/keriscoin-logo.svg" 
             alt="KerisWallet Logo" 
@@ -61,7 +61,7 @@ function LoadingScreen() {
         <motion.div 
           animate={{ rotate: 360 }}
           transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
-          className="absolute -inset-2 border-2 border-dashed border-jade/30 rounded-full"
+          className="absolute -inset-2 border-2 border-dashed border-ebony/30 rounded-full"
         />
       </motion.div>
       
@@ -115,13 +115,13 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-alabaster text-ebony flex justify-center font-sans selection:bg-jade/30">
+    <div className="min-h-screen bg-alabaster/20 text-ebony flex justify-center font-sans selection:bg-jade/30">
       <AnimatePresence>
         {isLoading && <LoadingScreen />}
       </AnimatePresence>
       
       {/* Mobile Container */}
-      <div className="w-full max-w-md bg-alabaster min-h-screen relative shadow-2xl shadow-ebony/10 overflow-hidden flex flex-col border-x border-ebony/10">
+      <div className="w-full max-w-md bg-test1 min-h-screen relative shadow-2xl shadow-ebony/10 overflow-hidden flex flex-col border-x border-ebony/10">
         
         {/* Background Glows */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[150%] h-96 bg-jade/5 blur-[120px] rounded-full pointer-events-none" />
@@ -129,7 +129,7 @@ export default function App() {
         {/* Header */}
         <header className="flex items-center justify-between p-6 relative z-10">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-white border border-ebony/10 flex items-center justify-center overflow-hidden">
+            <div className="w-10 h-10 rounded-full bg-alabaster border border-ebony/10 flex items-center justify-center overflow-hidden">
               <img src="https://i.imgur.com/39kHwZp.jpg" alt="Fitri" className="w-full h-full object-cover object-top" referrerPolicy="no-referrer" />
             </div>
             <div>
@@ -193,7 +193,10 @@ export default function App() {
 
         {/* Bottom Navigation */}
         <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md z-50 px-6 pb-6 pt-4 pointer-events-none">
-          <div className="relative bg-white/70 backdrop-blur-2xl rounded-[2rem] shadow-[0_8px_32px_rgba(16,22,45,0.15)] border border-white/60 px-4 py-2 flex items-center justify-between pointer-events-auto">
+        {/* Green Overlay Gradient */}
+          <div className="absolute bottom-0 left-0 right-0 h-45 bg-gradient-to-t from-jade/70 to-transparent pointer-events-none" />
+
+          <div className="relative bg-white backdrop-blur-2xl rounded-[1.2rem] shadow-[0_8px_32px_rgba(16,22,45,0.15)] border border-white/60 px-4 py-2 flex items-center justify-between pointer-events-auto">
             <NavItem icon={<Home size={24} />} active={activeTab === 'Home'} onClick={() => handleSetActiveTab('Home')} />
             <NavItem icon={<BarChart2 size={24} />} active={activeTab === 'Markets'} onClick={() => handleSetActiveTab('Markets')} />
             
@@ -205,7 +208,7 @@ export default function App() {
  
             {/* Central Floating Button */}
             <div className="absolute left-1/2 -translate-x-1/2 -top-6">
-              <div className="p-2 bg-alabaster/90 backdrop-blur-md rounded-full">
+              <div className="p-2 bg-white backdrop-blur-md rounded-full">
                 <button 
                   onClick={() => {
                     setQrMode('scan');
@@ -374,7 +377,7 @@ function HomeTab({
         initial={{ opacity: 0, y: 20, scale: 0.95 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
-        className="relative w-full rounded-[2rem] p-6 overflow-hidden mb-8 shadow-2xl shadow-ebony/20 bg-ebony"
+        className="relative w-full rounded-[1.2rem] p-6 overflow-hidden mb-8 shadow-2xl shadow-ebony/20 bg-ebony"
       >
         <div className="relative z-10">
           <div className="flex justify-between items-start mb-8">
@@ -455,7 +458,7 @@ function HomeTab({
                 <p className={`text-sm font-semibold mb-0.5 ${
                   tx.type === 'receive' ? 'text-emerald-600' : 
                   tx.type === 'send' ? 'text-ebony' : 
-                  'text-emerald-600'
+                  'text-blue-600'
                 }`}>{tx.amount}</p>
                 <p className="text-xs text-ebony/60">{tx.value}</p>
               </div>
@@ -576,7 +579,7 @@ function ReceiveTab({ setActiveTab, setQrMode }: { setActiveTab: (val: string) =
         <h2 className="text-2xl font-bold text-ebony">Receive KRIS</h2>
       </div>
 
-      <div className="bg-white/60 border border-ebony/10 rounded-[2rem] p-8 shadow-sm shadow-ebony/5 flex flex-col items-center text-center">
+      <div className="bg-white/60 border border-ebony/10 rounded-[1.2rem] p-8 shadow-sm shadow-ebony/5 flex flex-col items-center text-center">
         <div className="bg-white p-6 rounded-3xl shadow-xl shadow-ebony/5 border border-ebony/5 mb-8">
           <QRCode value="https://piteghi.xyz" size={200} fgColor="#10162d" bgColor="#ffffff" />
         </div>
@@ -630,10 +633,10 @@ function MarketsTab() {
       {/* KRIS/USDT Header */}
       <div className="flex items-center gap-3 mb-6">
         <div className="flex -space-x-2">
-          <div className="w-10 h-10 rounded-full bg-jade text-white flex items-center justify-center font-bold text-lg border-2 border-white shadow-sm z-10">
+          <div className="w-10 h-10 rounded-full bg-jade text-white flex items-center justify-center font-bold text-lg shadow-sm z-10">
             K
           </div>
-          <div className="w-10 h-10 rounded-full bg-teal-500 text-white flex items-center justify-center font-bold text-lg border-2 border-white shadow-sm">
+          <div className="w-10 h-10 rounded-full bg-teal-500 text-white flex items-center justify-center font-bold text-lg shadow-sm">
             ₮
           </div>
         </div>
@@ -795,7 +798,7 @@ function WalletTab({ setActiveTab }: { setActiveTab: (val: string) => void }) {
             key={asset.id}
             className={`flex items-center justify-between p-4 rounded-2xl border transition-colors cursor-pointer group shadow-sm shadow-ebony/5 ${
               asset.isMain 
-                ? 'bg-gradient-to-br from-jade to-ebony border-jade-dark text-white' 
+                ? 'bg-ebony border-jade-dark hover:bg-ebony/90 text-white' 
                 : 'bg-white/60 border-ebony/10 hover:bg-white text-ebony'
             }`}
           >
