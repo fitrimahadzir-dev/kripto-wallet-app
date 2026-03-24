@@ -774,13 +774,13 @@ function WalletTab({ setActiveTab }: { setActiveTab: (val: string) => void }) {
           onClick={() => setActiveTab('Send')}
           className="flex flex-col items-center justify-center gap-2 bg-white/80 border border-ebony/10 rounded-2xl p-4 hover:bg-alabaster transition-colors shadow-sm shadow-ebony/5"
         >
-          <div className="w-10 h-10 rounded-full bg-jade/10 text-jade flex items-center justify-center">
+          <div className="w-10 h-10 rounded-full bg-red-50 text-red-600 flex items-center justify-center">
             <ArrowUpRight size={20} />
           </div>
           <span className="text-xs font-semibold text-ebony">Withdraw</span>
         </button>
         <button className="flex flex-col items-center justify-center gap-2 bg-white/80 border border-ebony/10 rounded-2xl p-4 hover:bg-alabaster transition-colors shadow-sm shadow-ebony/5">
-          <div className="w-10 h-10 rounded-full bg-jade/10 text-jade flex items-center justify-center">
+          <div className="w-10 h-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center">
             <RefreshCw size={20} />
           </div>
           <span className="text-xs font-semibold text-ebony">Exchange</span>
