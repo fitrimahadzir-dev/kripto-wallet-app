@@ -803,7 +803,7 @@ function WalletTab({ setActiveTab }: { setActiveTab: (val: string) => void }) {
             }`}
           >
             <div className="flex items-center gap-4">
-              <div className={`w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-inner ${asset.color} ${asset.isMain ? 'ring-2 ring-white/30' : ''}`}>
+              <div className={`w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-inner ${asset.color} ${asset.isMain ? 'ring-2 ring-jade' : ''}`}>
                 {typeof asset.icon === 'string' ? asset.icon : asset.icon}
               </div>
               <div>
